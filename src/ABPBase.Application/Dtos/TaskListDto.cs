@@ -8,7 +8,7 @@ using ABPBase.Tasks;
 
 namespace ABPBase.Dtos
 {
-    public class TaskListDto:Entity,IHasCreationTime
+    public class TaskListDto : Entity, IHasCreationTime
     {
         [AutoMapFrom(typeof(Task))] //自动映射实体类（使用的是AutoMapper）
         public string Title { get; set; }
@@ -18,5 +18,7 @@ namespace ABPBase.Dtos
         public DateTime CreationTime { get; set; }
 
         public TaskState State { get; set; }
+        public Guid? AssignedPersonId { get; set; }
+        public string AssignedPersonName { get; set; }
     }
 }
